@@ -1,9 +1,10 @@
 import React from 'react';
+import Strike from "./Strike";
 
 const Display = (props) =>{
     return(
         <div className="display">
-        <div className="strikeDisplay">Strikes: {props.strike}</div>
+        <Strike />
         <div className="ballDisplay">Balls: {props.ball}</div>        
         </div>
     )

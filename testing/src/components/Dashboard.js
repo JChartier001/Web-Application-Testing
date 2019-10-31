@@ -1,25 +1,23 @@
 import React, {useState} from 'react'
 import Display from "./Display";
+import Strike from "./Strike";
 
 
 
 
 const Dashboard = () =>{
-const[strike, setStrike] = useState(0);
+
 const[ball, setBall] = useState(0);
 
 
 
     return(
         <div className="dashboard">
-            <Display strike={strike} ball={ball} />
-        <button className="strike" onClick= {() => { if (strike === 3){
-            setStrike(0);
-        } else {
-            setStrike(strike + 1);
-        }
-        }}>Strike</button>
-        <button className="ball"  onClick= {() => { if (ball === 4){
+        <Display />
+        <Strike />      
+            
+                     
+        {/* <button className="ball"  onClick= {() => { if (ball === 4){
             setBall(0);
         } else {
             setBall(ball + 1);
@@ -32,9 +30,10 @@ const[ball, setBall] = useState(0);
         }
         }}>Foul</button>
         <button className="hit"  onClick= {() => { setStrike(0); setBall(0)
-        }}>Hit</button>
-        </div>
-    )
+        }}>Hit</button>  */}
+       </div>
+    
+ )   
 }
 
 export default Dashboard;
