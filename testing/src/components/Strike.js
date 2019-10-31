@@ -1,17 +1,19 @@
-import React, {useState} from 'react';
-import Display from "./Display";
+import React from 'react';
 
 
-const Strike = () =>{
-    const[strike, setStrike] = useState(0);
+const Strike = (props) =>{
+    console.log("strike", props)
 
     return(
         <div className="strike">
-        <Display strike={strike}/>
-        <button onClick= {() => { if (strike === 3){
-            setStrike(0);
+        <div>Strike: {props.strike}</div>
+        <button onClick= {() => { if (props.strike === 2){
+            props.setStrike(0); if (props.strike === 2 && props.out >2){
+                props.setOut(0)}
+                else{
+                    props.setOut(props.out + 1);}
         } else {
-            setStrike(strike + 1);
+            props.setStrike(props.strike + 1);
                 }
          }
         }>Strike</button>
