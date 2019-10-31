@@ -1,9 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render, getByText} from "@testing-library/react";
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+
+test('renders without crashing', () => {
+  const {getAllByText} = render(<App />);
+  getAllByText(/strike/i)
+  
+});
+
+test('renders without crashing', () => {
+  const {getAllByText} = render(<App />);
+  getAllByText(/ball/i)
+  
+});
+
+test('renders without crashing', () => {
+  const {getByText} = render(<App />);
+  getByText(/foul/i)
+  
 });
